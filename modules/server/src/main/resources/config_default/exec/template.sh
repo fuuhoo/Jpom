@@ -12,6 +12,9 @@
 # Mistakenly deleted !!!!!!!!!!!
 # Init script templates for local build, local publish, script template and other related functions
 
+
+# 加载用户的.bashrc文件
+
 user="$(id -un 2>/dev/null || true)"
 
 if [ "$user" == 'root' ]; then
@@ -31,5 +34,9 @@ for element in "${userProfiles[@]}"; do
 		source "$element"
 	fi
 done
+
+eval "$(vfox activate bash)"
+
+
 
 # Do not delete the following content (leave at least one blank line)! ! ! ! !
